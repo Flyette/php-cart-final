@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Super boutique']) ?>
+<?php $this->layout('layout', ['title' => 'Super Shop']) ?>
 
 <div class="ui container">
 	<div class="ui grid two columns">
@@ -14,7 +14,17 @@
 		</div>
 		<div class="column">
 			<table class="ui table compact">
+				<thead>
+					<tr>
+					<th>Name of Product</th>
+						<th>Status</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+				<tbody>
+				<tr>
 				<!-- une boucle ! -->
+				
 			</table>
 		</div>
 	</div>
