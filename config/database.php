@@ -5,8 +5,8 @@ $capsule->addConnection([
 	'driver' => 'mysql',
 	'database' => 'kart',
 	'host' => 'localhost',
-	'username' => 'dbuser',
-	'password' => 'dbpassword',
+	'username' => 'root',
+	'password' => 'toor',
 	'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
 	'prefix' => ''
