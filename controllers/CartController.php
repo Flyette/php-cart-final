@@ -5,12 +5,18 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use App\Models\Product;
 use Cart;
+
 class CartController extends Controller {
 
 	public function getIndex(Request $request, Application $app){
+		return view('cart/index', ['orders' => 1]);
 	}	
 
 	public function postAdd(Request $request, Application $app){
+		$product = Product::find($request->get('id'));
+		Cart::add($product);
+		return $app->redirect('/');
+	
 	}	
 
 }
