@@ -9,12 +9,13 @@ use Cart;
 class CartController extends Controller {
 
 	public function getIndex(Request $request, Application $app){
-		return view('cart/index', ['orders' => 1]);
+		$order = Cart::get();
+		return view('cart/index', ['order' => $order]);
 	}	
 
 	public function postAdd(Request $request, Application $app){
 		$product = Product::find($request->get('id'));
-		Cart::add($product);
+		Cart::add($product->toArray());
 		return $app->redirect('/');
 	
 	}	
