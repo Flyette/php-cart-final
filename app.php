@@ -19,6 +19,9 @@ $app->get('/', 'App\\Controllers\\HomeController::getIndex');
 $app->get('/logout', 'App\\Controllers\\HomeController::getLogout'); 
 $app->get('/cart', 'App\\Controllers\\CartController::getIndex'); 
 $app->post('/cart/add', 'App\\Controllers\\CartController::postAdd'); 
+$app->get('/cart/checkout', 'App\\Controllers\\CustomerController::getIndex');
+$app->post('/cart/checkout', 'App\\Controllers\\CustomerController::postCustomer');
+
 
 
 $app->run(); 

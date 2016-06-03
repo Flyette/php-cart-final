@@ -19,5 +19,4 @@ class CartController extends Controller {
 		return $app->redirect('/');
 	
 	}	
-
 }
