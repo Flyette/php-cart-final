@@ -21,7 +21,9 @@ $app->get('/cart', 'App\\Controllers\\CartController::getIndex');
 $app->post('/cart/add', 'App\\Controllers\\CartController::postAdd'); 
 $app->get('/cart/checkout', 'App\\Controllers\\CustomerController::getIndex');
 $app->post('/cart/checkout', 'App\\Controllers\\CustomerController::postCustomer');
-
+$app->post('/cart/validation', 'App\\Controllers\\CustomerController::postCustomer');
+$app->get('/cart/validation', 'App\\Controllers\\OrdersController::getIndex');
+$app->post('/confirmation', 'App\\Controllers\\OrdersController::postOrders');
 
 
 $app->run(); 

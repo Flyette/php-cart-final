@@ -15,18 +15,16 @@ class CustomerController extends Controller {
 	}	
 
 	public function postCustomer(Request $request, Application $app){
-		self::create($_POST['first_name'],
-			$_POST['last_name'],
-			$_POST['adress'],
-			$_POST['postcode'],
-			$_POST['phone']);
-		return $app->redirect('/cart/checkout');
+		$customer = Customers::create([
+			"first_name" => $request->get('first_name'),
+			"last_name" => $request->get('last_name'),
+			"address" => $request->get('address'),
+			"postcode" => $request->get('postcode'),
+			"phone" => $request->get('phone')]);
+		$order = Cart::get();
+		$price = Cart::total();
+					
+		return view('/cart/validation', ['customer' => $customer, 'order' => $order, 'total' => $price]);
 
-	}
-
-
-	public function create($first_name, $last_name, $adress, $postcode, $phone){
-		$customer = Customers::create(['first_name' => $first_name], ['last_name' => $last_name], ['adress' => $adress], ['postcode' => $postcode], ['phone' => $phone]);
-		$customer->save();
 	}
 }
